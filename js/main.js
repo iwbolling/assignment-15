@@ -56,8 +56,13 @@ for (i=0;i<listItemAllNames.length;i++) {
   })
 };
 
-  // if statement for which section a list item is in
-  // removeChild from the section an item is in
-  // appendChild to the other section
-
 // TASK 5 -- (Adventure Mode)-- Add + Remove Item From List
+var spanColors = document.querySelectorAll("#change-colors .palette span");
+var pMsgBlock = document.querySelector("#change-colors .msg");
+for (i=0;i<spanColors.length;i++) {
+  var currentIteratedColor = spanColors[i];
+  currentIteratedColor.addEventListener("click", function(){
+    var currentColor = event.currentTarget.className;
+    pMsgBlock.className = currentColor;
+  })
+}
