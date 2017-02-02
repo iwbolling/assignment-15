@@ -39,5 +39,25 @@ for (i=0;i<buttonsAddPoints.length;i++) {
 };
 
 // TASK 4 -- Add Guest to List
+var divGoodStandingList = document.querySelector("#list-2-list .good-standing-list");
+var divProbationList = document.querySelector("#list-2-list .probation-list");
+var listItemAllNames = document.querySelectorAll("#list-2-list li");
+for (i=0;i<listItemAllNames.length;i++) {
+  var currentName = listItemAllNames[i];
+  currentName.addEventListener("click", function(){
+    var currentList = event.currentTarget.parentNode.className;
+    if (currentList === divGoodStandingList.className) {
+      divGoodStandingList.removeChild(event.currentTarget);
+      divProbationList.appendChild(event.currentTarget);
+    } else if (currentList === divProbationList.className) {
+      divProbationList.removeChild(event.currentTarget);
+      divGoodStandingList.appendChild(event.currentTarget);
+    }
+  })
+};
+
+  // if statement for which section a list item is in
+  // removeChild from the section an item is in
+  // appendChild to the other section
 
 // TASK 5 -- (Adventure Mode)-- Add + Remove Item From List
