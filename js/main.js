@@ -26,6 +26,17 @@ for (i=0;i<divOptions.length;i++) {
 };
 
 // TASK 3 -- Move Item From List to List
+var buttonsAddPoints = document.querySelectorAll("#add-vals .point");
+var h4TotalPoints = document.querySelector("#add-vals .total-points")
+var pointTotalVal = parseInt(h4TotalPoints.textContent);
+for (i=0;i<buttonsAddPoints.length;i++) {
+  var currentButton = buttonsAddPoints[i];
+  currentButton.addEventListener("click", function(){
+    var pointVal = parseInt(event.currentTarget.textContent);
+    pointTotalVal += pointVal;
+    h4TotalPoints.textContent = pointTotalVal;
+  })
+};
 
 // TASK 4 -- Add Guest to List
 
